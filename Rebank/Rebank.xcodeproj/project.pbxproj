@@ -14,6 +14,8 @@
 		545DD5F429C797C800EB2355 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545DD5F329C797C800EB2355 /* LoginView.swift */; };
 		545DD5F829C797E200EB2355 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545DD5F729C797E200EB2355 /* LoginViewModel.swift */; };
 		545DD5FB29C7981A00EB2355 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545DD5FA29C7981A00EB2355 /* UserModel.swift */; };
+		545DD5FF29C7C94F00EB2355 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545DD5FE29C7C94F00EB2355 /* OnBoarding.swift */; };
+		545DD60129C7C99400EB2355 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545DD60029C7C99400EB2355 /* OnBoardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		545DD5F329C797C800EB2355 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		545DD5F729C797E200EB2355 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		545DD5FA29C7981A00EB2355 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		545DD5FE29C7C94F00EB2355 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		545DD60029C7C99400EB2355 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		545DD60229C7CFEB00EB2355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,7 @@
 		545DD5E029C7967E00EB2355 /* Rebank */ = {
 			isa = PBXGroup;
 			children = (
+				545DD60229C7CFEB00EB2355 /* Info.plist */,
 				545DD5E129C7967E00EB2355 /* RebankApp.swift */,
 				545DD5F229C797AF00EB2355 /* Extensions */,
 				545DD5F129C797A800EB2355 /* ViewModel */,
@@ -89,6 +95,7 @@
 			children = (
 				545DD5E329C7967E00EB2355 /* ContentView.swift */,
 				545DD5F329C797C800EB2355 /* LoginView.swift */,
+				545DD5FE29C7C94F00EB2355 /* OnBoarding.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				545DD5F729C797E200EB2355 /* LoginViewModel.swift */,
+				545DD60029C7C99400EB2355 /* OnBoardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -180,8 +188,10 @@
 			files = (
 				545DD5F829C797E200EB2355 /* LoginViewModel.swift in Sources */,
 				545DD5F429C797C800EB2355 /* LoginView.swift in Sources */,
+				545DD60129C7C99400EB2355 /* OnBoardingViewModel.swift in Sources */,
 				545DD5E429C7967E00EB2355 /* ContentView.swift in Sources */,
 				545DD5FB29C7981A00EB2355 /* UserModel.swift in Sources */,
+				545DD5FF29C7C94F00EB2355 /* OnBoarding.swift in Sources */,
 				545DD5E229C7967E00EB2355 /* RebankApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +324,7 @@
 				DEVELOPMENT_TEAM = NJ3YBT6N93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Rebank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -343,7 +353,7 @@
 				DEVELOPMENT_TEAM = NJ3YBT6N93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Rebank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

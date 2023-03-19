@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentTab = 0
+    
     var body: some View {
-        VStack {
-            LoginView()
-        }
-        .padding()
+        TabView(selection: $currentTab,
+                content:  {
+            
+            
+            ForEach(OnBoardingViewModel.list) { viewData in
+                OnBoarding(data: viewData)
+                .tag(viewData.id)
+                
+            }
+        })
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        
+
+        
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

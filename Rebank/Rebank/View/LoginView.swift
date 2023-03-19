@@ -26,22 +26,26 @@ struct LoginView: View {
             
             .padding()
             
-            TextField("Username", text: $username)
+            Text("Username")
+                .padding(EdgeInsets(top: -5, leading: 0, bottom: -10, trailing: 200))
+            
+            TextField("", text: $username)
                 .frame(width: 300, height: 50)
-                .background(Color.white)
-                .foregroundColor(.black)
+                .background(Color.secondary)
+                .foregroundColor(.white)
                 .cornerRadius(14)
                 .multilineTextAlignment(.leading)
-                .textCase(.lowercase)
                 .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
             
+            Text("Password")
+                .padding(EdgeInsets(top: -5, leading: 0, bottom: -10, trailing: 200))
             
-            SecureField("Password", text: $password)
+            SecureField("", text: $password)
                 .frame(width: 300, height: 50)
-                .background(Color.white)
+                .background(Color.secondary)
+                .foregroundColor(.white)
                 .cornerRadius(14)
                 .multilineTextAlignment(.leading)
-                .textCase(.lowercase)
                 .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
             
             
@@ -58,6 +62,7 @@ struct LoginView: View {
             }
                 .frame(width: 70, height: 35)
                 .background(Color.secondary)
+                .foregroundColor(.white)
                 .cornerRadius(3)
                 .padding(.top, 16)
                 .alert("Please check your username and password", isPresented: $showingAlert) {
@@ -66,7 +71,7 @@ struct LoginView: View {
                 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.gray)
+        .background(Color.white)
     }
 
 }
