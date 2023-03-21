@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var currentTab = 0
+    @State private var currentTab: Int = 0
+    @State var isTabView: Bool = true
+    @State var shouldShowOnboarding = true
+     
     
     var body: some View {
-        TabView(selection: $currentTab,
-                content:  {
-            
-            
-            ForEach(OnBoardingViewModel.list) { viewData in
-                OnBoarding(data: viewData)
-                .tag(viewData.id)
-                
-            }
-        })
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-        
 
-        
+            TabView(selection: $currentTab,
+                    content:  {
+
+
+                ForEach(OnBoardingViewModel.list) { viewData in
+                    OnBoarding(data: viewData)
+                        .tabItem({
+                            Text("\(viewData.id)")
+                        })
+                        .tag(viewData.id)
+
+                }
+            })
+
+
     }
+        
 }
 
 

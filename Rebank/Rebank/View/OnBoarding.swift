@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct OnBoarding: View {
+    
+    
     var data: OnBoardingViewModel
     
     @State private var isAnimating: Bool = false
     @State private var isPresenting: Bool = false
+    
     
     var body: some View {
         NavigationView {
@@ -26,7 +29,8 @@ struct OnBoarding: View {
                 
                 Spacer()
                 Spacer()
-                
+                Spacer()
+                Spacer()
                 Text(data.primaryText)
                     .font(.title2)
                     .bold()
@@ -37,6 +41,10 @@ struct OnBoarding: View {
                 
                 Button(action: {
                     isPresenting = true
+                
+                    
+                    
+                    
                 }, label: {
                     Text("Get Started")
                         .font(.headline)
@@ -59,7 +67,7 @@ struct OnBoarding: View {
                 NavigationLink(destination: LoginView(), isActive: $isPresenting) {EmptyView()}
                 
                 
-                Spacer()
+                
             }
             .onAppear(perform: {
                 isAnimating = false

@@ -14,7 +14,7 @@ struct LoginView: View {
     @State var password: String = ""
     @ObservedObject var viewModel = LoginViewModel()
     @State var showingAlert: Bool = false
-    
+        
     var body: some View {
         VStack(alignment: .center, spacing: 20){
             Group{
@@ -72,6 +72,7 @@ struct LoginView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white)
+
     }
 
 }

@@ -17,5 +17,6 @@ struct OnBoardingViewModel: Identifiable, Hashable {
           OnBoardingViewModel(id: 1, objectImage: "world", primaryText: "Move your money around the world quickly and safely"),
           OnBoardingViewModel(id: 2, objectImage: "thumbs", primaryText: "Learn more at www.bankey.com")
       ]
+    
   }
 
