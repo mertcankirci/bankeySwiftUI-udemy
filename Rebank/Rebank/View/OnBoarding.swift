@@ -11,7 +11,7 @@ struct OnBoarding: View {
     
     
     var data: OnBoardingViewModel
-    
+    @Binding var shouldShowOnBoarding : Bool
     @State private var isAnimating: Bool = false
     @State private var isPresenting: Bool = false
     
@@ -26,7 +26,7 @@ struct OnBoarding: View {
                     .scaledToFit()
                     .offset(x: 0, y: 150)
                     .scaleEffect(isAnimating ? 1 : 0.9)
-                
+            
                 Spacer()
                 Spacer()
                 Spacer()
@@ -35,16 +35,10 @@ struct OnBoarding: View {
                     .font(.title2)
                     .bold()
                     .foregroundColor(Color(red: 41 / 255, green: 52 / 255, blue: 73 / 255))
-                
-                
                 Spacer()
-                
                 Button(action: {
                     isPresenting = true
-                
-                    
-                    
-                    
+                    shouldShowOnBoarding.toggle()
                 }, label: {
                     Text("Get Started")
                         .font(.headline)
@@ -63,11 +57,6 @@ struct OnBoarding: View {
                         )
                 })
                 .shadow(radius: 10)
-                
-                NavigationLink(destination: LoginView(), isActive: $isPresenting) {EmptyView()}
-                
-                
-                
             }
             .onAppear(perform: {
                 isAnimating = false
@@ -79,8 +68,9 @@ struct OnBoarding: View {
     }
 }
 
-struct OnBoarding_Previews: PreviewProvider {
-    static var previews: some View {
-        OnBoarding(data: OnBoardingViewModel.list.first!)
-    }
-}
+//struct OnBoarding_Previews: PreviewProvider {
+//    @Binding var shouldShowOnBoarding : Bool
+//    static var previews: some View {
+//        OnBoarding(data: OnBoardingViewModel.list.first!, shouldShowOnBoarding: $shouldShowOnBoarding)
+//    }
+//}

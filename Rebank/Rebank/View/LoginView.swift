@@ -14,52 +14,54 @@ struct LoginView: View {
     @State var password: String = ""
     @ObservedObject var viewModel = LoginViewModel()
     @State var showingAlert: Bool = false
+    @State var showingBankingView: Bool = false
         
     var body: some View {
-        VStack(alignment: .center, spacing: 20){
-            Group{
-                Text("BANKEY")
-                    .font(.title)
-                Text("Your premium source for all things banking")
-                    .font(.footnote)
-            }
-            
-            .padding()
-            
-            Text("Username")
-                .padding(EdgeInsets(top: -5, leading: 0, bottom: -10, trailing: 200))
-            
-            TextField("", text: $username)
-                .frame(width: 300, height: 50)
-                .background(Color.secondary)
-                .foregroundColor(.white)
-                .cornerRadius(14)
-                .multilineTextAlignment(.leading)
-                .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-            
-            Text("Password")
-                .padding(EdgeInsets(top: -5, leading: 0, bottom: -10, trailing: 200))
-            
-            SecureField("", text: $password)
-                .frame(width: 300, height: 50)
-                .background(Color.secondary)
-                .foregroundColor(.white)
-                .cornerRadius(14)
-                .multilineTextAlignment(.leading)
-                .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-            
-            
-            
-            Button("Log in") {
+        NavigationView {
+            VStack(alignment: .center, spacing: 20){
+                Group{
+                    Text("BANKEY")
+                        .font(.title)
+                    Text("Your premium source for all things banking")
+                        .font(.footnote)
+                }
                 
-                if viewModel.login(username: username, password: password){
-                    //MARK: NEW SCREEN
-                    print("New screen")
+                .padding()
+                
+                Text("Username")
+                    .padding(EdgeInsets(top: -5, leading: 0, bottom: -10, trailing: 200))
+                
+                TextField("", text: $username)
+                    .frame(width: 300, height: 50)
+                    .background(Color.secondary)
+                    .foregroundColor(.white)
+                    .cornerRadius(14)
+                    .multilineTextAlignment(.leading)
+                    .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                
+                Text("Password")
+                    .padding(EdgeInsets(top: -5, leading: 0, bottom: -10, trailing: 200))
+                
+                SecureField("", text: $password)
+                    .frame(width: 300, height: 50)
+                    .background(Color.secondary)
+                    .foregroundColor(.white)
+                    .cornerRadius(14)
+                    .multilineTextAlignment(.leading)
+                    .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                
+                
+                
+                Button("Log in") {
+                    
+                    if viewModel.login(username: username, password: password){
+                        //MARK: NEW SCREEN
+                        showingBankingView.toggle()
+                    }
+                    else {
+                        showingAlert.toggle()
+                    }
                 }
-                else {
-                    showingAlert.toggle()
-                }
-            }
                 .frame(width: 70, height: 35)
                 .background(Color.secondary)
                 .foregroundColor(.white)
@@ -68,11 +70,13 @@ struct LoginView: View {
                 .alert("Please check your username and password", isPresented: $showingAlert) {
                     Button("OK", role: .cancel) {}
                 }
+                NavigationLink(destination: BankingView(), isActive: $showingBankingView, label: { EmptyView() })
                 
+                
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.white)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white)
-
     }
 
 }

@@ -8,30 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var currentTab: Int = 0
+
     @State var isTabView: Bool = true
-    @State var shouldShowOnboarding = true
-     
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding = true
+    
     
     var body: some View {
-
-            TabView(selection: $currentTab,
-                    content:  {
-
-
-                ForEach(OnBoardingViewModel.list) { viewData in
-                    OnBoarding(data: viewData)
-                        .tabItem({
-                            Text("\(viewData.id)")
-                        })
-                        .tag(viewData.id)
-
-                }
-            })
-
-
-    }
         
+        NavigationView {
+            LoginView()
+        }
+        .fullScreenCover(isPresented: $shouldShowOnboarding) {
+            OnBoardingView(shouldShowOnBoarding: $shouldShowOnboarding)
+        }
+        
+    }
+    
 }
 
 
