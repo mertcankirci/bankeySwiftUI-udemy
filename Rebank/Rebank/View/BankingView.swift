@@ -14,7 +14,25 @@ struct BankingView: View {
     var body: some View {
         VStack {
             HStack(alignment: .top){
-                Color.red
+                ZStack {
+                    Color.blue
+                    
+                    Text("REBANK")
+                        .frame(width: 100, height: 100)
+                        .bold()
+                        .foregroundColor(.white)
+                        
+                    
+                    Image("sun.max.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 65,height: 65)
+                        .padding(EdgeInsets(top: 80, leading: 300, bottom: 8, trailing: 8))
+                        
+                        .foregroundColor(.yellow)
+                        
+                }
+               
             }
             .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight/5)
             ScrollView{
