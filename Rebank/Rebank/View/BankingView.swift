@@ -37,9 +37,11 @@ struct BankingView: View {
             .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenHeight/5)
             ScrollView{
                 VStack(alignment: .leading) {
-                    Text("Coin names       Coin Prices")
-                        .foregroundColor(.blue)
-                        .font(.headline)
+                    HStack{
+                        Text("Coin Names")
+                            .padding()
+                        Text("Coin Prices")
+                    }
                     ForEach(networkService.banking) { bank in
                         HStack {
                             Text(bank.currency)
@@ -47,6 +49,7 @@ struct BankingView: View {
                                 .padding()
                             Text(bank.price)
                                 .bold()
+                                .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 8))
                                 
                         }
                     }
